@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="845.0" prefWidth="1401.0" style="-fx-background-color: linear-gradient(to right,#CB40F5, #6640F5);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
+   <children>
+      <AnchorPane fx:id="ENCODING_PANE" layoutX="20.0" layoutY="186.0" opacity="0.0" prefHeight="505.0" prefWidth="963.0" style="-fx-background-color: white; -fx-background-radius: 30 30 0 0;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="176.0">
+         <effect>
+            <DropShadow color="#5a5a5a" height="48.99" offsetX="3.0" offsetY="3.0" radius="16.997500000000002" />
+         </effect>
+         <children>
+            <HBox alignment="CENTER" layoutX="169.0" prefHeight="123.0" prefWidth="647.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="133.0">
+               <children>
+                  <AnchorPane prefHeight="150.0" prefWidth="432.0" style="-fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="52.0" layoutY="14.0" prefHeight="89.0" prefWidth="333.0" style="-fx-text-fill: linear-gradient(to left,#CB40F5, #6640F5);" text="Encoding Operation" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#BACK_FROM_ENC_BT" prefHeight="81.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20 0 20 0;" text="Home" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <HBox alignment="CENTER" layoutX="2.0" layoutY="163.0" prefHeight="203.0" prefWidth="945.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0">
+               <children>
+                  <AnchorPane prefHeight="370.0" prefWidth="955.0">
+                     <children>
+                        <Button fx:id="ENC_OPS_BT" layoutX="671.0" mnemonicParsing="false" onAction="#ENC_OPS_BT" onMouseEntered="#ENC_OPS_MOUSE_IN" onMouseExited="#ENC_OPS_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="671.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="CHOOSE_ENC_BT" mnemonicParsing="false" onAction="#CHOOSE_ENC_BT" onMouseEntered="#CHOOSE_ENC_MOUSE_IN" onMouseExited="#CHOOSE_ENC_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="76.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="ENC_OPS_ICON" fitHeight="81.0" fitWidth="81.0" layoutX="734.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/lock.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="CHOOSE_ENC_ICON" fitHeight="81.0" fitWidth="81.0" layoutX="138.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/image.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="ENC_OPS_LB" alignment="CENTER" layoutX="702.0" layoutY="136.0" prefHeight="22.0" prefWidth="144.0" text="Encode" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CHOOSE_ENC_LB" alignment="CENTER" layoutX="107.0" layoutY="136.0" prefHeight="22.0" prefWidth="144.0" text="Choose image" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="TYPE_BT" layoutX="370.0" mnemonicParsing="false" onAction="#TYPE_BT" onMouseEntered="#TYPE_MOUSE_IN" onMouseExited="#TYPE_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to right,#CB40F5, #6640F5); -fx-background-radius: 20;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="TYPE_ICON" fitHeight="81.0" fitWidth="81.0" layoutX="432.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/type.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="TYPE_LB" alignment="CENTER" layoutX="392.0" layoutY="136.0" prefHeight="34.0" prefWidth="163.0" text="Type a message" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TEXT_AREA" accessibleRole="TEXT_AREA" alignment="TOP_LEFT" layoutX="330.0" layoutY="17.0" prefHeight="170.0" prefWidth="314.0" promptText="Type a message to encode..." scaleX="0.0" scaleY="0.0" style="-fx-background-color: white; -fx-background-radius: 20 20 0 20;">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="SAVE_BT" layoutX="575.0" layoutY="250.0" mnemonicParsing="false" onAction="#SAVE_BT" prefHeight="50.0" prefWidth="150.0" scaleX="0.0" scaleY="0.0" style="-fx-background-color: white; -fx-text-fill: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 8;" text="Save" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="CANCEL" fitHeight="70.0" fitWidth="70.0" layoutX="690.0" layoutY="-60.0" onMouseClicked="#CANCEL_BT" pickOnBounds="true" preserveRatio="true" scaleX="0.0" scaleY="0.0">
+                           <image>
+                              <Image url="@icons/cancel.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow color="#6b6b6b" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="195.0" layoutY="31.0" prefHeight="89.0" prefWidth="363.0" text="Steganography" textFill="WHITE" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="31.0">
+         <font>
+            <Font name="Segoe UI Semilight" size="40.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="73.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/stg.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <AnchorPane fx:id="DECODING_PANE" layoutX="20.0" layoutY="186.0" opacity="0.0" prefHeight="505.0" prefWidth="963.0" style="-fx-background-color: white; -fx-background-radius: 30 30 0 0;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="176.0">
+         <effect>
+            <DropShadow color="#5a5a5a" height="48.99" offsetX="3.0" offsetY="3.0" radius="16.997500000000002" />
+         </effect>
+         <children>
+            <HBox alignment="CENTER" layoutX="2.0" layoutY="163.0" prefHeight="203.0" prefWidth="945.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0">
+               <children>
+                  <AnchorPane prefHeight="370.0" prefWidth="955.0">
+                     <children>
+                        <Button fx:id="DEC_OPS_BT" layoutX="535.0" mnemonicParsing="false" onAction="#DEC_OPS_BT" onMouseEntered="#DEC_OPS_MOUSE_IN" onMouseExited="#DEC_OPS_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="535.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="CHOOSE_BT" layoutX="234.0" mnemonicParsing="false" onAction="#CHOOSE_BT" onMouseEntered="#CHOOSE_MOUSE_IN" onMouseExited="#CHOOSE_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="234.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="DEC_OPS_ICON" fitHeight="81.0" fitWidth="81.0" layoutX="598.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/unlock.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="CHOOSE_ICON" fitHeight="81.0" fitWidth="81.0" layoutX="296.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/image.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="DEC_OPS_LB" alignment="CENTER" layoutX="566.0" layoutY="136.0" prefHeight="22.0" prefWidth="144.0" text="Decode" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CHOOSE_LB" alignment="CENTER" layoutX="265.0" layoutY="136.0" prefHeight="22.0" prefWidth="144.0" text="Choose image" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="163.0" prefHeight="123.0" prefWidth="647.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="139.0">
+               <children>
+                  <AnchorPane prefHeight="150.0" prefWidth="432.0" style="-fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="52.0" layoutY="14.0" prefHeight="89.0" prefWidth="340.0" style="-fx-text-fill: linear-gradient(to left,#CB40F5, #6640F5);" text="Decoding Operation" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#BACK_FROM_DEC_BT" prefHeight="81.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20 0 20 0;" text="Home" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="MAIN_PANE" layoutY="500.0" prefHeight="505.0" prefWidth="963.0" style="-fx-background-color: white; -fx-background-radius: 30 30 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="176.0">
+         <effect>
+            <DropShadow color="#5a5a5a" height="48.99" offsetX="3.0" offsetY="3.0" radius="16.997500000000002" />
+         </effect>
+         <children>
+            <HBox alignment="CENTER" layoutX="-1.0" layoutY="10.0" prefHeight="420.0" prefWidth="949.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="408.0" prefWidth="949.0">
+                     <children>
+                        <Button fx:id="ENC_BT" layoutX="217.0" layoutY="159.0" mnemonicParsing="false" onAction="#ENC_BT" onMouseEntered="#ENC_MOUSE_IN" onMouseExited="#ENC_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to top,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="217.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="DEC_BT" layoutX="527.0" layoutY="159.0" mnemonicParsing="false" onAction="#DEC_BT" onMouseEntered="#DEC_MOUSE_IN" onMouseExited="#DEC_MOUSE_OUT" prefHeight="203.0" prefWidth="205.0" style="-fx-background-color: linear-gradient(to bottom,#1aa3ff, #6640F5); -fx-background-radius: 20;" AnchorPane.leftAnchor="527.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="239.0" prefHeight="89.0" prefWidth="487.0" style="-fx-text-fill: linear-gradient(to right,#CB40F5, #6640F5);" text="Choose an Operation" AnchorPane.leftAnchor="239.0">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="37.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="ENC_ICON" fitHeight="89.0" fitWidth="93.0" layoutX="275.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/lock.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="DEC_ICON" fitHeight="89.0" fitWidth="93.0" layoutX="585.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/unlock.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="ENC_LB" alignment="CENTER" layoutX="248.0" layoutY="303.0" prefHeight="22.0" prefWidth="144.0" text="Encoding" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="DEC_LB" alignment="CENTER" layoutX="558.0" layoutY="303.0" prefHeight="22.0" prefWidth="144.0" text="Decoding" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="DONE_PANE" prefHeight="845.0" prefWidth="1401.0" scaleX="0.0" scaleY="0.0" style="-fx-background-color: linear-gradient(to right,#1aa3ff, #6640F5);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="6.0" layoutY="192.0" prefHeight="486.0" prefWidth="1394.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="1.0">
+               <children>
+                  <Label fx:id="DONE_LB" alignment="CENTER" prefHeight="300.0" prefWidth="650.0" style="-fx-background-color: white; -fx-background-radius: 15;" translateY="80.0">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#797979" height="64.54" radius="30.215000000000003" width="58.32" />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" translateY="-200.0">
+                     <image>
+                        <Image url="@icons/done.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" onAction="#OK_BT" prefHeight="47.0" prefWidth="148.0" style="-fx-background-color: linear-gradient(to right,#CB40F5, #6640F5); -fx-background-radius: 10;" text="Ok" textFill="WHITE" translateY="-80.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

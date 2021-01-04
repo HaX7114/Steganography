@@ -83,15 +83,19 @@ public class Steganographer {
     
     private static BufferedImage getImageInUserSpace(BufferedImage image) {
 
-        //TODO here dod
+        BufferedImage imageInUserSpace = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
+        Graphics2D graphics = imageInUserSpace.createGraphics();
+        graphics.drawRenderedImage(image, null);
+        graphics.dispose();
+        return imageInUserSpace;
     } //ENCODE
 
     private static byte[] getBytesFromImage(BufferedImage image) {
 
-         //TODO here dod
-        
+        WritableRaster raster = image.getRaster();
+        DataBufferByte buffer = (DataBufferByte) raster.getDataBuffer();
+        return buffer.getData();
     }//ENCODE
-
     private static byte[] getBytesFromInt(int integer) {
 
         //TODO here Enas

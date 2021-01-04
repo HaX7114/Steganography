@@ -18,13 +18,52 @@ public class Steganographer {
 
     public static boolean encode(String imagePath, String textPath) {
 
-        //TODO here Kabo
+        BufferedImage originalImage = getImageFromPath(imagePath);
+        BufferedImage imageInUserSpace = getImageInUserSpace(originalImage);
+        String text = getTextFromTextFile(textPath);
+
+        byte imageInBytes[] = getBytesFromImage(imageInUserSpace);
+        byte textInBytes[] = text.getBytes();
+        byte textLengthInBytes[] = getBytesFromInt(textInBytes.length);
+        try {
+            encodeImage(imageInBytes, textLengthInBytes, 0);
+            encodeImage(imageInBytes, textInBytes, bytesForTextLengthData * bitsInByte);
+        } catch (Exception exception) {
+            System.out.println("Couldn't hide text in image. Error: " + exception);
+            return false;
+        }
+
+        String fileName = imagePath;
+        int position = fileName.lastIndexOf(".");
+        if (position > 0) {
+            fileName = fileName.substring(0, position);
+        }
+
+        String finalFileName = fileName + "_with_hidden_message.png";
+        System.out.println("Successfully encoded text in: " + finalFileName);
+        saveImageToPath(imageInUserSpace, new File(finalFileName), "png");
+        return true;
+
     }
 
     public static String decode(String imagePath) {
 
-         //TODO here Kabo
-         
+        byte[] decodedHiddenText;
+        try {
+            BufferedImage imageFromPath = getImageFromPath(imagePath);
+            BufferedImage imageInUserSpace = getImageInUserSpace(imageFromPath);
+            byte imageInBytes[] = getBytesFromImage(imageInUserSpace);
+            decodedHiddenText = decodeImage(imageInBytes);
+            String hiddenText = new String(decodedHiddenText);
+            String outputFileName = "Hidden_text.txt";
+            saveTextToPath(hiddenText, new File(outputFileName));
+            System.out.println("Successfully extracted text to: " + outputFileName);
+            return hiddenText;
+        } catch (Exception exception) {
+            System.out.println("No hidden message. Error: " + exception);
+            return "false";
+
+        }
     }
 
 //ENCODING FUNCTIONS

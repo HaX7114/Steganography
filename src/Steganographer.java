@@ -30,14 +30,29 @@ public class Steganographer {
 //ENCODING FUNCTIONS
     
     private static byte[] encodeImage(byte[] image, byte[] addition, int offset) {
-        
-            //TODO here Basem
+
+        if (addition.length + offset > image.length) {
+            throw new IllegalArgumentException("Image file is not long enough to store provided text");
+        }
+        for (int i = 0; i < addition.length; i++) {
+            int additionByte = addition[i];
+            for (int bit = bitsInByte - 1; bit >= 0; --bit, offset++) {
+                int b = (additionByte >>> bit) & 0x1;
+                image[offset] = (byte) ((image[offset] & 0xFE) | b);
+            }
+        }
+        return image;
 
     }//ENCODE
 
     private static void saveImageToPath(BufferedImage image, File file, String extension) {
-        
-            //TODO here Basem
+
+        try {
+            file.delete();
+            ImageIO.write(image, extension, file);
+        } catch (Exception exception) {
+            System.out.println("Image file could not be saved. Error: " + exception);
+        }
 
     }//ENCODE
 

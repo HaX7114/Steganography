@@ -98,7 +98,7 @@ public class Steganographer {
     }//ENCODE
     private static byte[] getBytesFromInt(int integer) {
 
-        //TODO here Enas
+	return ByteBuffer.allocate(bytesForTextLengthData).putInt(integer).array();
 
     }//ENCODE
     
@@ -107,14 +107,37 @@ public class Steganographer {
 //DECODING FUNCTIONS
     
     private static byte[] decodeImage(byte[] image) {
+	int length = 0;
+        int offset = bytesForTextLengthData * bitsInByte;
 
-        //TODO here Enas
+        for (int i = 0; i < offset; i++) {
+            length = (length << 1) | (image[i] & 0x1);
+        }
+
+        byte[] result = new byte[length];
+
+        for (int b = 0; b < result.length; b++) {
+            for (int i = 0; i < bitsInByte; i++, offset++) {
+                result[b] = (byte) ((result[b] << 1) | (image[offset] & 0x1));
+            }
+        }
+        return result;
     }//DECODE
 
     private static void saveTextToPath(String text, File file) {
-       
-        //TODO here Enas
-       
+       try {
+            if (file.exists() == false) {
+                file.createNewFile();
+            }
+            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(text);
+            bufferedWriter.close();
+        } catch (Exception exception) {
+            System.out.println("Couldn't write text to file: " + exception);
+
+        }
+  
     }//DECODE
 
 //END OF DECODING
